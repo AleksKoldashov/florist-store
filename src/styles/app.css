@@ -1,0 +1,74 @@
+.app{
+    background-color: rgba(255, 255, 255, 1);
+    width: 1440px;
+    margin: auto;
+}
+.header-app{
+    width: 1200px;
+    height: 53px;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.header-center{
+    display: flex;
+    justify-content: space-around;
+    width: 351px;
+}
+.header-r{
+    display: flex;
+    justify-content: space-around;
+    width: 250px;
+}
+
+.header-r button{
+    width: 100px;
+    height: 35px;
+    background-color: rgba(70, 163, 88, 1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+.mainBaner{
+    width: 1200px;
+    height: 450px;
+    background-color: rgba(245, 245, 245, 0.5);
+    display: block;
+    margin: auto;
+}
+.btn-baner{
+    width: 140px;
+    height: 40px;
+    background-color: rgba(70, 163, 88, 1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+.textbaner{
+    position: relative;
+    top: 100px;
+    width: 600px;
+    margin: auto 50px;
+}
+.flowerbig{
+    position: relative;
+    top: -250px;
+    left: 700px;
+}
+.flowersmall{
+    position: relative;
+    top: -285px;
+    left: 200px;
+}
+
+.home-content{
+    width: 1200px;
+    margin: 50px auto;
+}
+
+.categories{
+    width: 320px;
+    height: 774px;
+    background-color: rgba(251, 251, 251, 1);
+}
