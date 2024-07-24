@@ -24,7 +24,7 @@ module.exports = {
     mode,
     plugins,
     target,
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     devtool: 'source-map', 
     output: {
         path: path.resolve(__dirname, 'dist'),

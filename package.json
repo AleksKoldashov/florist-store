@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "homepage": "https://AleksKoldashov.github.io/florist-store",
-  "main": "index.jsx",
+  "main": "index.tsx",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development",
