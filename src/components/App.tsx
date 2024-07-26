@@ -1,12 +1,24 @@
-import React, { useState } from "react"
-import '../styles/app.css'
-import HomePage from "./Page/HomePage"
-import { useQuery } from "react-query"
+import React, { useEffect, useState } from "react";
+import '../styles/app.css';
+import search from '../assets/img//imgheader/search.svg';
+import basket from '../assets/img//imgheader/basket.svg';
+import logo from '..//assets/img/logo.svg';
+import HomePage from "./Page/HomePage";
+import { useQuery } from "react-query";
 import { Spin } from 'antd';
+import AdminPage from "./Page/AdminPage/AdminPage";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
+const headerMenu=[
+    {id:1, title: 'Home', path:'/home'},
+    {id:2, title: 'Shop', path:'/home'},
+    {id:3, title: 'Plant Care',path:'/home'},
+    {id:4, title: 'Blogs', path:'/admin'},
+]
 
 export default function App (){
-const [value, setValue]=useState<any>()
+const MyNavigate=useNavigate()
+
 const {data, isLoading, isError}=useQuery({
     queryKey:['products'],
     queryFn: async () =>{
@@ -15,25 +27,28 @@ const {data, isLoading, isError}=useQuery({
     }
 })
 
+useEffect(()=>{
+    MyNavigate('/home')
+}, [])
 
-const addfoto= async ()=>{
-const formData = new FormData();
-formData.append('flo', value)
-const res = await fetch(`https://firebasestorage.googleapis.com/v0/b/florist-project-78b45.appspot.com/o/img%2Fflo`,{
-    method:'POST',
-    body: formData
-});
-const data = await res.json();
-console.log(data);
-
-    // //имя создаваемого файла
-    // const storageRef = ref(storage, 'img/s1');
-    // uploadBytes(storageRef, value).then((snapshot) => {
-    // });
-}
 return(
 <div className="app">
+        <div className="header-app">
+            <img src={logo} alt="logo"/>
+            <div className="header-center">
+            {
+                headerMenu.map((item)=><NavLink key={item.id} to={item.path}>{item.title}</NavLink>)
+            }
+            </div>
+            <div className="header-r">
+            <img src={search} alt="logo"/>
+            <img src={basket} alt="logo"/>
+            <button>Login</button>
+            </div>
+        </div>
     {/* <HomePage/> */}
+    {/* <AdminPage/> */}
+    <Outlet/>
     {/* {
       isLoading ? <Spin/>
       :
@@ -41,15 +56,7 @@ return(
       :
       data
     } */}
-    gg
-    <img src='https://firebasestorage.googleapis.com/v0/b/florist-project-78b45.appspot.com/o/flowe?alt=media&token=b62ec61e-590f-43d0-ac43-1beddb616259' alt="logo"/>
-    <button onClick={()=>{addfoto()}}>Добавить фото</button>
-    <input 
-        type="file" 
-        onChange={(e:any)=>{setValue(e.target.files[0])}} 
-        aria-label="d"
-        accept="image/*"
-        />
+  
 </div>
 )
 }

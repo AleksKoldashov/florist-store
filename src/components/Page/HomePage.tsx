@@ -1,37 +1,14 @@
 import React from "react"
 import '..//../styles/app.css'
-import logo from '..//..//assets/img/logo.svg'
 import flowerbig from '..//../assets/img/flowerbig.svg'
 import flowersmall from '..//../assets/img/flowersmall.svg'
-import search from '..//../assets/img//imgheader/search.svg'
-import basket from '..//../assets/img//imgheader/basket.svg'
+
 
 
 export default function HomePage (){
 
-const headerMenu=[
-    {id:1, title: 'Home'},
-    {id:2, title: 'Shop'},
-    {id:3, title: 'Plant Care'},
-    {id:4, title: 'Blogs'},
-]
 
-
-
-return<div className="app">
-        <div className="header-app">
-            <img src={logo} alt="logo"/>
-            <div className="header-center">
-            {
-                headerMenu.map((item)=><a key={item.id}>{item.title}</a>)
-            }
-            </div>
-            <div className="header-r">
-            <img src={search} alt="logo"/>
-            <img src={basket} alt="logo"/>
-            <button>Login</button>
-            </div>
-        </div>
+return<div className="app">    
         <div className="mainBaner">
             <div className="textbaner">
                 <h4>Welcome to GreenShop</h4>

@@ -1,0 +1,17 @@
+.admin{
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.sidebar-admin{
+    width: 250px;
+    height: 1750px;
+    border-radius: 6px;
+    background-color: rgba(245, 245, 245, 0.5);
+}
+.content-admin{
+    width: 900px;
+    margin-left: 35px;
+}
