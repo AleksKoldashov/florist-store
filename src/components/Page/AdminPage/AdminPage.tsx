@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './index.css';
+import { NavLink, Outlet } from "react-router-dom";
+import { MyReduserContext } from "../../../components/Reducers/Reducer";
 
+const menuAdmin = [
+    {id:1, title: 'Список товаров', path: '/admin/listproducts'},
+    {id:2, title: 'Добавить товар', path: '/admin/addproduct'},
+    {id:3, title: 'Добавить категорию', path: '/admin/addcategories'},
+]
 
 
 export default function AdminPage (){
+
     const [value, setValue]=useState<any>()
     const addfoto= async ()=>{
         const formData = new FormData();
@@ -29,10 +37,18 @@ return(
             accept="image/*"
             /> */}
         <div className="sidebar-admin">
-
+            {
+                menuAdmin.map(item=>
+                <NavLink 
+                key={item.id} 
+                to={item.path} 
+                style={{marginTop:'10px', fontSize: '20px'}}
+          
+                >{item.title}</NavLink>)
+            }
         </div>
         <div className="content-admin">
-            <h1>dfdsf</h1>
+           <Outlet/>
         </div>       
     </div>
     )

@@ -6,6 +6,9 @@
 }
 
 .sidebar-admin{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 250px;
     height: 1750px;
     border-radius: 6px;
@@ -15,3 +18,35 @@
     width: 900px;
     margin-left: 35px;
 }
+.admincard{
+    display: grid;
+    grid-template-columns: 50px 200px 50px 100px 80px 150px 150px 50px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.admincard{
+    font-size: 20px;
+}
+.imgprod{
+   width: 50px;
+}
+
+.imgdelete{
+    width: 20px;
+}
+
+.btnChange{
+    background-color: white;
+    margin: 0;
+    border: none;
+    font-size: 20px;
+}
+.categoriescard{
+    display: grid;
+    grid-template-columns: 70% 20%;
+}
+
+
+/* Form Admin */
+

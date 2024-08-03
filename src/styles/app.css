@@ -3,10 +3,14 @@
     width: 1440px;
     margin: auto;
 }
+a{
+    text-decoration: none;
+}
 .header-app{
     width: 1200px;
     height: 53px;
     margin: auto;
+    margin-top: 15px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -30,6 +34,7 @@
     border: none;
     border-radius: 6px;
 }
+
 .mainBaner{
     width: 1200px;
     height: 450px;
@@ -61,14 +66,31 @@
     top: -285px;
     left: 200px;
 }
-
 .home-content{
     width: 1200px;
     margin: 50px auto;
+    display: flex;
 }
-
+.products{
+    margin: auto 20px;
+    width: 900px;
+    height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.categhome{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.wrapcateg{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
 .categories{
+    padding: 30px;
     width: 320px;
-    height: 774px;
     background-color: rgba(251, 251, 251, 1);
 }
