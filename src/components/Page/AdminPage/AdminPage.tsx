@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import './index.css';
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { MyReduserContext } from "../../../components/Reducers/Reducer";
+import logout from '../../../assets/img/logout.svg'
 
 const menuAdmin = [
     {id:1, title: 'Список товаров', path: '/admin/listproducts'},
@@ -11,7 +12,7 @@ const menuAdmin = [
 
 
 export default function AdminPage (){
-
+    const nav=useNavigate()
     const [value, setValue]=useState<any>()
     const addfoto= async ()=>{
         const formData = new FormData();
@@ -24,7 +25,11 @@ export default function AdminPage (){
         }
 
 
-
+    const clearlocal=()=>{
+    localStorage.setItem('authAdmin', 'false') 
+    // localStorage.clear()
+    nav('/home')
+    } 
 
 return(
     <div className="admin">
@@ -46,6 +51,15 @@ return(
           
                 >{item.title}</NavLink>)
             }
+          <svg width="307" height="1" viewBox="0 0 307 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="0.85" x2="307" y2="0.85" stroke="#46A358" stroke-opacity="0.5" stroke-width="0.3"/>
+          </svg>
+          <img 
+          className='logout'
+          alt='logout' 
+          src={logout} 
+          onClick={()=>{clearlocal()}}
+          />
         </div>
         <div className="content-admin">
            <Outlet/>

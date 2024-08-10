@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react"
-import { useQuery } from "react-query"
 
 export const MyReduserContext = createContext({})as any
 
@@ -8,52 +7,84 @@ type iAction={
    payload?: any;
    payloadimg?: any;
 }
+const basket:any = localStorage.getItem('basket')
+const order:any = localStorage.getItem('order')
+
 export const Product:any ={
-  
+  prod: {},
+  basket: JSON.parse(basket) || [],
+  order: JSON.parse(order) || [],
+
 }
-const test=()=>{
-   console.log('test');
-}
+
+
+
 export const reducer=(state:any, action:iAction):any=>{
    switch (action.type) {
       case 'categories': return {
          ...state,
-          categories: action.payload
+         prod:{...state.prod,categories: action.payload}
       }
       case 'name': return {
          ...state,
-          name: action.payload
+         prod:{...state.prod,name: action.payload}
+         
       }
       case 'price': return {
          ...state,
-         price: action.payload
+         prod:{...state.prod,price: action.payload}
+         
       }
       case 'quantily': return {
          ...state,
-         quantily: action.payload
+         prod:{...state.prod,quantily: action.payload}
+        
       }
       case 'description': return {
          ...state,
-         description: action.payload
+         prod:{...state.prod,description: action.payload}
+         
       }
       case 'size': return {
          ...state,
-         size: action.payload
+         prod:{...state.prod,size: action.payload}
+         
       }
       case 'img': return {
          ...state,
-         urlimg: action.payload,
-         img: action.payloadimg
+         prod:{...state.prod, urlimg: action.payload,img: action.payloadimg} 
       }
       case 'test': return {
-         ...state,
-         test: 'test'
+         ...state
       }
       case 'clear': return {
-        
+         ...state,
+         prod: {}, 
+         success: null
       }
-   
-   
+      case 'clearBasket': 
+      return {
+         ...state,
+         basket: [],
+         
+      }
+      case 'success': return {
+         ...state,
+         success:  <h3>Product success add</h3>
+      }
+      case 'modal': return {
+         ...state,
+         modal: action.payload
+      }
+      case 'basket': return {
+         ...state,
+         basket: action.payload
+      }
+      case 'like': return {
+         ...state,
+         like: 0
+      }
+        
       default:
          return state;
    }

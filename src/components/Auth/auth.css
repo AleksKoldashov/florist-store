@@ -1,0 +1,89 @@
+.mymodal{
+    width: 500px;
+    height: 600px;
+    border-bottom: 10px solid rgba(70, 163, 88, 1);
+    position: relative;
+    top: -450px;
+    right: -350px;
+    background-color: white;
+    z-index: 100;
+}
+
+.appbaground{
+    position: fixed;
+    z-index: 99;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background: rgba(0,0,0,0.7);
+    transition: opacity 0.3s ease;
+}
+.mymodal +.appbaground{
+    left: 0;
+    opacity: 1;
+}
+
+.close{
+    display: flex;
+    height: 18px;
+    width: 18px;
+    flex-direction: row-reverse;
+    align-items: center;
+    cursor: pointer;
+}
+.modal-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btn-login{
+  padding: 0;
+  border: none;
+  font: inherit;
+  color:rgba(61, 61, 61, 1);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 15px;
+}
+.btn-reg{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color:rgba(61, 61, 61, 1);
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px;
+  }
+
+.wrapper-body{
+    height: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.forg-pass{
+    margin-left: 150px;
+    margin-top: 15px;
+    color: rgba(70, 163, 88, 1);
+    font-weight: 400;
+}
+.loginAuth{
+    width: 300px;
+    height: 45px;
+    background-color: rgba(70, 163, 88, 1);
+    color: white;
+    margin: 30px;
+}
+.foter{
+    display: flex;
+    align-items: center;
+}

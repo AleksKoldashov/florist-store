@@ -11,10 +11,10 @@ export default function useMyInput(){
         // e.preventDefault()
         setValueInput(e.currentTarget.value);  
     } 
-
+    
     const input=({...props}:any)=>{
        return <div>
-       <Input 
+       <Input
        onChange={onChangeInput} 
        value={valueInput}
        {...props}

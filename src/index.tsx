@@ -10,10 +10,12 @@ import AdminPage from './components/Page/AdminPage/AdminPage';
 import AdminListProducts from './components/Page/AdminPage/CompAdmin/AdminListProducts';
 import {AdminAddProduct} from './components/Page/AdminPage/CompAdmin/AdminAddProduct';
 import AdminAddCategories from './components/Page/AdminPage/CompAdmin/AdminAddCategories';
-import { MyReduserContext, Product, reducer } from '../src/components/Reducers/Reducer';
 import ErrorPage from '../src/components/Page/ErrorPage';
 import ShowCategories from '../src/components/Page/HomePage/Categories/ShowCategories';
 import AllProducts from './components/Page/HomePage/Products/AllProducts';
+import AccountPage from './components/Page/AccountPage';
+import ProductPage from './components/Page/ProductPage';
+import ProductCartPage from './components/Page/ProductCartPage';
 
 
 
@@ -28,7 +30,9 @@ const queryClient = new QueryClient({
   },
 })
 
-const Auth = true
+const Auth = JSON.parse(localStorage.getItem('authUser')as any)
+const AuthAdmin = JSON.parse(localStorage.getItem('authAdmin')as any)
+console.log(Auth);
 
 const router= createHashRouter([
   {
@@ -38,26 +42,35 @@ const router= createHashRouter([
     children: [
       {
         path: '/home',
-        // element: Auth ? <HomePage/> : null
         element:  <HomePage/>,
         errorElement: <ErrorPage/>,
         children:[
           {
             path: '/home/categories/:idCategories',
-            // element: Auth ? <HomePage/> : null
             element:  <ShowCategories/>
           },
           {
             path: '/home/products',
-            // element: Auth ? <HomePage/> : null
             element:  <AllProducts/>
           },
+          
         ] 
       },
-      
+      {
+        path: '/account/:idAccount',
+        element:  <AccountPage />
+      },
+      {
+        path: '/product/:idProduct',
+        element:  <ProductPage />
+      },
+      {
+        path: '/productcart',
+        element: <ProductCartPage/>
+      },
       {
         path:'/admin',
-        element: Auth ? <AdminPage/> : null,
+        element: <AdminPage/>,
         children: [
           {
             path: '/admin/listproducts',

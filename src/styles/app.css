@@ -3,8 +3,9 @@
     width: 1440px;
     margin: auto;
 }
-a{
+a.app:active, a.app:hover, a{
     text-decoration: none;
+    color: #666;
 }
 .header-app{
     width: 1200px;
@@ -25,14 +26,29 @@ a{
     justify-content: space-around;
     width: 250px;
 }
-
-.header-r button{
+.app-btn-login-link{
     width: 100px;
     height: 35px;
     background-color: rgba(70, 163, 88, 1);
     color: white;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-btn-login-link div{
+    margin-bottom: 5px;
+}
+.app-btn-login{
+    width: 100px;
+    height: 35px;
+    background-color: rgba(70, 163, 88, 1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .mainBaner{
@@ -49,6 +65,7 @@ a{
     color: white;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
 }
 .textbaner{
     position: relative;
@@ -73,15 +90,15 @@ a{
 }
 .products{
     margin: auto 20px;
-    width: 900px;
-    height: 900px;
+    width: 1000px;
+    height: 1100px;
     display: flex;
     flex-wrap: wrap;
 }
 .categhome{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    /* height: 100%; */
 }
 .wrapcateg{
     display: flex;
@@ -89,8 +106,25 @@ a{
     align-items: center;
     justify-content: space-between;
 }
+.wrapcateg .a{
+  text-decoration: none;
+  color: #666;
+}
 .categories{
     padding: 30px;
     width: 320px;
     background-color: rgba(251, 251, 251, 1);
+}
+.foter-app{
+    width: 1200px;
+    height: 88px;
+    margin: auto;
+    background-color: rgba(70, 163, 88, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.foter-item{
+    display: flex;
+    align-items: center;
 }

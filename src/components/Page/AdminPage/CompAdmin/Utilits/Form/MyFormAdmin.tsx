@@ -132,6 +132,9 @@ const handleChangeImg = (value: any) => {
             accept="image/*"
           />
         </FormItem>
+        {
+          state?.success
+        }
     </Form>
         </>
        

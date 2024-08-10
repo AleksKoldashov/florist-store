@@ -17,7 +17,7 @@ export default function ShowCategories() {
       {
        filterFunc(productsArray).length > 0 
        ? 
-      filterFunc(productsArray).map((item:any)=> <CardProduct item={item} key={item.id}/>)
+       filterFunc(productsArray).map((item:any)=> <CardProduct item={item} key={item.id}/>)
         :
         <span>No Product</span>
       }

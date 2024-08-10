@@ -1,0 +1,35 @@
+.account{
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    min-height: 900px;
+    max-height: 100%;
+}
+
+.sidebar-account{
+    display: inline-grid;
+    align-items: center;
+    flex-direction: column;
+    width: 310px;
+    height: 431px;
+    border-radius: 6px;
+    background-color: rgba(245, 245, 245, 0.5);
+    padding: 10px;
+}
+.content-account{
+    width: 900px;
+    margin-left: 35px;
+}
+.account-item{
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.account-item:hover{
+    background-color: rgba(255, 255, 255, 1);
+    border-left: 5px solid rgba(70, 163, 88, 1);
+}
+.logout{
+    cursor: pointer;
+}

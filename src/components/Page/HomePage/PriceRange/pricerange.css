@@ -1,0 +1,13 @@
+.btn-range{
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    
+}
+.line-range{
+    height: 5px;
+    width: 300px;
+    background-color: aliceblue;
+    border: 10px;
+    cursor: pointer;
+}
